@@ -2,43 +2,96 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>@ViewBag.Title - BauMax</title>
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
+    <meta name="keywords" content="HTML5 Template" />
+    <meta name="description" content="Porto - Responsive HTML5 Template">
+    <meta name="author" content="okler.net">
+    <!-- Web Fonts  -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light"
+          rel="stylesheet" type="text/css">
+
+    <!-- Vendor CSS -->
+    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/fontawesome-all.css" />
+    <link rel="stylesheet" href="~/Content/animate.min.css">
+    <link rel="stylesheet" href="~/Content/simple-line-icons.min.css">
+    <link rel="stylesheet" href="~/Content/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/Content/owl.theme.default.min.css">
+    <link rel="stylesheet" href="~/Content/magnific-popup.min.css">
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="~/Content/theme.css">
+    <link rel="stylesheet" href="~/Content/theme-elements.css">
+    <link rel="stylesheet" href="~/Content/theme-blog.css">
+    <link rel="stylesheet" href="~/Content/theme-shop.css">
+
+    <!-- Current Page CSS -->
+    <link rel="stylesheet" href="~/Content/settings.css">
+    <link rel="stylesheet" href="~/Content/layers.css">
+    <link rel="stylesheet" href="~/Content/navigation.css">
+    <link rel="stylesheet" href="~/Content/nivo-slider.css">
+    <link rel="stylesheet" href="~/Content/default.css">
+
+    <!-- Demo CSS -->
+    <link rel="stylesheet" href="~/Content/demo-construction.css">
+
+    <!-- Skin CSS -->
+    <link rel="stylesheet" href="~/Content/skin-construction.css">
+
+    <!-- Theme Custom CSS -->
+    <link rel="stylesheet" href="~/Content/style.css">
+
+    <!-- Head Libs -->
+    <script src="~/Scripts/modernizr-2.8.3.js"></script>
 
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>
-    <div class="container body-content">
+<body data-spy="scroll" data-target="#sidebar" data-offset="120">
+    <div class="body">
+        @Html.Partial("_MenuPartial")
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        @Html.Partial("_FooterPartial")
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    <!-- Vendor -->
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.appear.min.js"></script>
+    <script src="~/Scripts/jquery.easing.min.js"></script>
+    <script src="~/Scripts/jquery.cookie.min.js"></script>
+    <script src="~/Scripts/umd/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/common.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.easypiechart.min.js"></script>
+    <script src="~/Scripts/jquery.gmap.min.js"></script>
+    <script src="~/Scripts/jquery.lazyload.min.js"></script>
+    <script src="~/Scripts/jquery.isotope.min.js"></script>
+    <script src="~/Scripts/owl.carousel.min.js"></script>
+    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
+    <script src="~/Scripts/jquery.vide.min.js"></script>
+    <script src="~/Scripts/vivus.min.js"></script>
+
+    <!-- Theme Base, Components and Settings -->
+    <script src="~/Scripts/theme.js"></script>
+
+    <!-- Current Page Vendor and Views -->
+    <script src="~/Scripts/jquery.themepunch.tools.min.js"></script>
+    <script src="~/Scripts/jquery.themepunch.revolution.min.js"></script>
+
+    <!-- Current Page Vendor and Views -->
+    <script src="~/Scripts/jquery.nivo.slider.min.js"></script>
+    <script src="~/Scripts/view.contact.js"></script>
+
+    <!-- Demo -->
+    <script src="~/Scripts/demo-construction.js"></script>
+
+    <!-- Theme Custom -->
+    <script src="~/Scripts/custom.js"></script>
+
+    <!-- Theme Initialization Files -->
+    <script src="~/Scripts/theme.init.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>
