@@ -303,6 +303,7 @@
     <Content Include="Content\images\construction\icons\plumbing.png" />
     <Content Include="Content\images\construction\logo-construction-small.png" />
     <Content Include="Content\images\construction\logo-construction.png" />
+    <Content Include="Content\images\construction\logo.png" />
     <Content Include="Content\images\construction\office\office-1.jpg" />
     <Content Include="Content\images\construction\slides\slide-construction-1.jpg" />
     <Content Include="Content\images\construction\slides\slide-construction-2.jpg" />
