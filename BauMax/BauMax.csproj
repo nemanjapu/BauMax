@@ -221,6 +221,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\DashboardController.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -286,9 +287,8 @@
     <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
-    <Content Include="Content\images\construction\blog\blog-construction-1.jpg" />
-    <Content Include="Content\images\construction\blog\blog-construction-2.jpg" />
-    <Content Include="Content\images\construction\blog\blog-construction-3.jpg" />
+    <Content Include="Content\images\arrows.png" />
+    <Content Include="Content\images\bullets.png" />
     <Content Include="Content\images\construction\footer-construction.jpg" />
     <Content Include="Content\images\construction\gallery\construction-gallery-2.jpg" />
     <Content Include="Content\images\construction\gallery\construction-gallery-3.jpg" />
@@ -297,6 +297,12 @@
     <Content Include="Content\images\construction\gallery\construction-gallery-6.jpg" />
     <Content Include="Content\images\construction\gallery\construction-gallery-7.jpg" />
     <Content Include="Content\images\construction\gallery\step1.jpg" />
+    <Content Include="Content\images\construction\gallery\step2.jpg" />
+    <Content Include="Content\images\construction\gallery\step3.jpg" />
+    <Content Include="Content\images\construction\gallery\step4.jpg" />
+    <Content Include="Content\images\construction\gallery\step5.jpg" />
+    <Content Include="Content\images\construction\gallery\step6.jpg" />
+    <Content Include="Content\images\construction\gallery\step7.jpg" />
     <Content Include="Content\images\construction\icons\construction.png" />
     <Content Include="Content\images\construction\icons\ground-construction.png" />
     <Content Include="Content\images\construction\icons\painting.png" />
@@ -315,6 +321,7 @@
     <Content Include="Content\images\construction\testimonials\testimonials-bg.jpg" />
     <Content Include="Content\images\dotted-line-angle.png" />
     <Content Include="Content\images\home-concept-small.png" />
+    <Content Include="Content\images\loading.gif" />
     <Content Include="Content\images\logos\logo-1.png" />
     <Content Include="Content\images\logos\logo-2.png" />
     <Content Include="Content\images\logos\logo-3.png" />
@@ -598,6 +605,7 @@
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

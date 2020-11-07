@@ -1,4 +1,4 @@
-@charset "UTF-8";
+﻿@charset "UTF-8";
 /*
 Name: 			theme-elements.css
 Written by: 	Okler Themes - (http://www.okler.net)
@@ -7176,7 +7176,7 @@ button.mfp-arrow.mfp-arrow-right:after {
 /* Close */
 .mfp-close,
 .mfp-close-btn-in .mfp-close {
-	font-family: "Open Sans", Arial, sans-serif;
+	font-family: "Josefin Sans", Arial, sans-serif;
 	font-weight: 600;
 	font-size: 22px;
 	color: #838383;
@@ -12730,7 +12730,7 @@ html.boxed .slider-container {
 
 .testimonial.testimonial-style-3 blockquote p {
 	color: #777;
-	font-family: "Open Sans", Arial, sans-serif;
+	font-family: "Josefin Sans", Arial, sans-serif;
 	font-size: 1em;
 	font-style: normal;
 }
@@ -12788,7 +12788,7 @@ html.boxed .slider-container {
 
 .testimonial.testimonial-style-4 blockquote p {
 	color: #777;
-	font-family: "Open Sans", Arial, sans-serif;
+	font-family: "Josefin Sans", Arial, sans-serif;
 	font-size: 1em;
 	font-style: normal;
 }
@@ -12835,7 +12835,7 @@ html.boxed .slider-container {
 
 .testimonial.testimonial-style-5 blockquote p {
 	color: #777;
-	font-family: "Open Sans", Arial, sans-serif;
+	font-family: "Josefin Sans", Arial, sans-serif;
 	font-size: 1.2em;
 	font-style: normal;
 }
@@ -14313,7 +14313,7 @@ p.drop-caps.drop-caps-style-2:first-letter {
 
 /* Default Font Style */
 .default-font {
-	font-family: "Open Sans", Arial, sans-serif;
+	font-family: "Josefin Sans", Arial, sans-serif;
 }
 
 /* Alternative Font Style */
