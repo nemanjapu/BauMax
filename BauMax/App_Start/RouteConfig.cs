@@ -14,6 +14,7 @@ namespace BauMax
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
             routes.MapMvcAttributeRoutes();
             routes.LowercaseUrls = true;
+            routes.AppendTrailingSlash = true;
 
             routes.MapRoute(
                "Sitemap",

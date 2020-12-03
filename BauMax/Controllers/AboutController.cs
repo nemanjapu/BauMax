@@ -6,9 +6,11 @@ using System.Web.Mvc;
 
 namespace BauMax.Controllers
 {
+    [RoutePrefix("o-nama")]
     public class AboutController : Controller
     {
-        // GET: About
+        [Route]
+        [OutputCache(Location = System.Web.UI.OutputCacheLocation.Server, Duration = 86400)]
         public ActionResult Index()
         {
             return View();

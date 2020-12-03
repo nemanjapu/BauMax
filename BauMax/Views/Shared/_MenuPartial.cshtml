@@ -24,55 +24,23 @@
                                 <nav class="collapse">
                                     <ul class="nav nav-pills" id="mainNav">
                                         <li>
-                                            <a class="nav-link active" href="demo-construction.html">
-                                                Home
+                                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Home" ? "active" : "")" href="/">
+                                                Početna
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="demo-construction-company.html">
-                                                Company
-                                            </a>
-                                        </li>
-                                        <li class="dropdown">
-                                            <a class="nav-link dropdown-toggle"
-                                               href="demo-construction-services.html">
-                                                Services
-                                            </a>
-                                            <ul class="dropdown-menu">
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                       href="demo-construction-services-detail.html">Pre-Construction</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                       href="demo-construction-services-detail.html">
-                                                        General
-                                                        Construction
-                                                    </a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                       href="demo-construction-services-detail.html">Plumbing</a>
-                                                </li>
-                                                <li>
-                                                    <a class="dropdown-item"
-                                                       href="demo-construction-services-detail.html">Painting</a>
-                                                </li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a class="nav-link" href="demo-construction-projects.html">
-                                                Projects
+                                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "About" ? "active" : "")" href="@Url.Action("Index", "About")">
+                                                O nama
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="demo-construction-blog.html">
-                                                Blog
+                                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Services" ? "active" : "")" href="@Url.Action("Index", "Services")">
+                                                Usluge
                                             </a>
                                         </li>
                                         <li>
-                                            <a class="nav-link" href="demo-construction-contact.html">
-                                                Contact
+                                            <a class="nav-link @(ViewContext.RouteData.Values["Controller"].ToString() == "Contact" ? "active" : "")" href="@Url.Action("Index", "Contact")">
+                                                Kontakt
                                             </a>
                                         </li>
                                     </ul>

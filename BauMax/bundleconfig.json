@@ -1,0 +1,56 @@
+[
+  {
+    "outputFileName": "Scripts/bundle.js",
+    "inputFiles": [
+      "Scripts/jquery-3.4.1.js",
+      "Scripts/jquery.appear.js",
+      "Scripts/jquery.easing.min.js",
+      "Scripts/jquery.cookie.js",
+      "Scripts/umd/popper.js",
+      "Scripts/bootstrap.js",
+      "Scripts/common.js",
+      "Scripts/jquery.validate.js",
+      "Scripts/jquery.validate.unobtrusive.js",
+      "Scripts/jquery.unobtrusive-ajax.js",
+      "Scripts/jquery.gmap.js",
+      "Scripts/jquery.lazyload.js",
+      "Scripts/jquery.isotope.min.js",
+      "Scripts/owl.carousel.js",
+      "Scripts/jquery.magnific-popup.js",
+      "Scripts/jquery.vide.js",
+      "Scripts/vivus.js",
+      "Scripts/theme.js",
+      "Scripts/jquery.nivo.slider.js",
+      "Scripts/demo-construction.js",
+      "Scripts/custom.js",
+      "Scripts/theme.init.js"
+    ]
+  },
+  {
+    "outputFileName": "Content/bundle.css",
+    "inputFiles": [
+      "Content/fonts.css",
+      "Content/bootstrap.css",
+      "Content/fontawesome-all.css",
+      "Content/animate.min.css",
+      "Content/simple-line-icons.css",
+      "Content/owl.carousel.css",
+      "Content/owl.theme.default.css",
+      "Content/magnific-popup.css",
+      "Content/theme.css",
+      "Content/theme-elements.css",
+      "Content/theme-blog.css",
+      "Content/theme-shop.css",
+      "Content/nivo-slider.css",
+      "Content/nivo-default.css",
+      "Content/demo-construction.css",
+      "Content/skin-construction.css"
+    ]
+  },
+  {
+    "outputFileName": "Scripts/modernizr-2.8.3.min.js",
+    "inputFiles": [
+      "Scripts/modernizr-2.8.3.js"
+    ]
+  }
+]

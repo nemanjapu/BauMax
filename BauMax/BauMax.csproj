@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -49,6 +49,9 @@
   <ItemGroup>
     <Reference Include="CommonServiceLocator, Version=2.0.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
       <HintPath>..\packages\Unity.5.2.0\lib\net47\CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
@@ -207,9 +210,6 @@
     <Reference Include="Microsoft.Owin.Security.OAuth">
       <HintPath>..\packages\Microsoft.Owin.Security.OAuth.4.0.1\lib\net45\Microsoft.Owin.Security.OAuth.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -224,13 +224,16 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ServicesController.cs" />
     <Compile Include="Core\Interfaces\ILeadsRepository.cs" />
     <Compile Include="Core\IUnitOfWork.cs" />
     <Compile Include="Core\Models\Lead.cs" />
     <Compile Include="Core\Repositories\LeadsRepository.cs" />
     <Compile Include="Core\UnitOfWork.cs" />
+    <Compile Include="Core\ViewModels\ContactViewModel.cs" />
     <Compile Include="DAL\ApplicationDbContext.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -247,6 +250,9 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="android-chrome-192x192.png" />
+    <Content Include="android-chrome-256x256.png" />
+    <Content Include="apple-touch-icon.png" />
     <Content Include="Areas\Admin\Content\css\all.min.css" />
     <Content Include="Areas\Admin\Content\css\animate.css" />
     <Content Include="Areas\Admin\Content\css\bootstrap-datepicker3.css" />
@@ -272,6 +278,7 @@
     <Content Include="Areas\Admin\Content\js\theme.init.js" />
     <Content Include="Areas\Admin\Content\js\theme.js" />
     <Content Include="Areas\Admin\Content\js\website-pages.js" />
+    <Content Include="browserconfig.xml" />
     <Content Include="Content\animate.min.css" />
     <Content Include="Content\bootstrap-grid.css" />
     <Content Include="Content\bootstrap-grid.min.css" />
@@ -281,12 +288,25 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\brands.css" />
     <Content Include="Content\brands.min.css" />
-    <Content Include="Content\default.css" />
+    <Content Include="Content\bundle.css" />
+    <Content Include="Content\bundle.min.css">
+      <DependentUpon>bundle.css</DependentUpon>
+    </Content>
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-100.svg" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-200.svg" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-300.svg" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-500.svg" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-600.svg" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-700.svg" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-regular.svg" />
+    <Content Include="Content\fonts\playfair-display-v21-latin-ext-regular.svg" />
+    <Content Include="Content\nivo-default.css" />
     <Content Include="Content\demo-construction.css" />
     <Content Include="Content\fontawesome-all.css" />
     <Content Include="Content\fontawesome-all.min.css" />
     <Content Include="Content\fontawesome.css" />
     <Content Include="Content\fontawesome.min.css" />
+    <Content Include="Content\fonts.css" />
     <Content Include="Content\images\arrows.png" />
     <Content Include="Content\images\bullets.png" />
     <Content Include="Content\images\construction\footer-construction.jpg" />
@@ -303,10 +323,10 @@
     <Content Include="Content\images\construction\gallery\step5.jpg" />
     <Content Include="Content\images\construction\gallery\step6.jpg" />
     <Content Include="Content\images\construction\gallery\step7.jpg" />
-    <Content Include="Content\images\construction\icons\construction.png" />
-    <Content Include="Content\images\construction\icons\ground-construction.png" />
-    <Content Include="Content\images\construction\icons\painting.png" />
-    <Content Include="Content\images\construction\icons\plumbing.png" />
+    <Content Include="Content\images\construction\icons\service1.jpg" />
+    <Content Include="Content\images\construction\icons\service2.jpg" />
+    <Content Include="Content\images\construction\icons\service3.jpg" />
+    <Content Include="Content\images\construction\icons\service4.jpg" />
     <Content Include="Content\images\construction\logo-construction-small.png" />
     <Content Include="Content\images\construction\logo-construction.png" />
     <Content Include="Content\images\construction\logo.png" />
@@ -328,6 +348,7 @@
     <Content Include="Content\images\logos\logo-4.png" />
     <Content Include="Content\images\logos\logo-5.png" />
     <Content Include="Content\images\logos\logo-6.png" />
+    <Content Include="Content\images\pin.png" />
     <Content Include="Content\layers.css" />
     <Content Include="Content\LICENSE.txt" />
     <Content Include="Content\magnific-popup.css" />
@@ -357,13 +378,21 @@
     <Content Include="Content\toastr.min.css" />
     <Content Include="Content\v4-shims.css" />
     <Content Include="Content\v4-shims.min.css" />
+    <Content Include="favicon-16x16.png" />
+    <Content Include="favicon-32x32.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\style.css" />
+    <Content Include="mstile-150x150.png" />
+    <Content Include="safari-pinned-tab.svg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bundle.js" />
+    <Content Include="Scripts\bundle.min.js">
+      <DependentUpon>bundle.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\common.init.js" />
     <Content Include="Scripts\common.js" />
     <Content Include="Scripts\common.min.js" />
@@ -432,6 +461,40 @@
     <Content Include="Content\fonts\revicons.svg" />
     <Content Include="Content\fonts\revicons.ttf" />
     <Content Include="Content\fonts\revicons.woff" />
+    <None Include="bundleconfig.json" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-100.eot" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-100.ttf" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-100.woff" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-100.woff2" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-200.eot" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-200.ttf" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-200.woff" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-200.woff2" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-300.eot" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-300.ttf" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-300.woff" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-300.woff2" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-500.eot" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-500.ttf" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-500.woff" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-500.woff2" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-600.eot" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-600.ttf" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-600.woff" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-600.woff2" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-700.eot" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-700.ttf" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-700.woff" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-700.woff2" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-regular.eot" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-regular.ttf" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-regular.woff" />
+    <Content Include="Content\fonts\josefin-sans-v16-latin-ext-regular.woff2" />
+    <Content Include="Content\fonts\playfair-display-v21-latin-ext-regular.eot" />
+    <Content Include="Content\fonts\playfair-display-v21-latin-ext-regular.ttf" />
+    <Content Include="Content\fonts\playfair-display-v21-latin-ext-regular.woff" />
+    <Content Include="Content\fonts\playfair-display-v21-latin-ext-regular.woff2" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -456,6 +519,8 @@
     <Content Include="Scripts\jquery.nivo.slider.min.js" />
     <Content Include="Scripts\jquery.themepunch.revolution.min.js" />
     <Content Include="Scripts\jquery.themepunch.tools.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -463,6 +528,9 @@
     <Content Include="Scripts\jquery.vide.js" />
     <Content Include="Scripts\jquery.vide.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\modernizr-2.8.3.min.js">
+      <DependentUpon>modernizr-2.8.3.js</DependentUpon>
+    </Content>
     <Content Include="Scripts\owl.carousel.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\popper-utils.js" />
@@ -554,7 +622,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Services\Index.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -606,6 +674,9 @@
     <Content Include="Views\Shared\_MenuPartial.cshtml" />
     <Content Include="Views\Shared\_FooterPartial.cshtml" />
     <Content Include="Views\About\Index.cshtml" />
+    <Content Include="site.webmanifest" />
+    <Content Include="Views\Error\NotFound.cshtml" />
+    <Content Include="Views\Shared\_PreloadResouresPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -659,8 +730,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
     <Error Condition="!Exists('..\packages\BuildBundlerMinifier.3.2.449\build\BuildBundlerMinifier.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\BuildBundlerMinifier.3.2.449\build\BuildBundlerMinifier.targets'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
   </Target>
   <Import Project="..\packages\BuildBundlerMinifier.3.2.449\build\BuildBundlerMinifier.targets" Condition="Exists('..\packages\BuildBundlerMinifier.3.2.449\build\BuildBundlerMinifier.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.

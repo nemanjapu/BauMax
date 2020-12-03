@@ -3,51 +3,24 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>@ViewBag.Title - BauMax</title>
-    <!-- Mobile Metas -->
+    <title>@ViewBag.Title - BauMax Instalacija sistema za klimatizaciju, vodovod i kanalizaciju</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no">
-    <meta name="keywords" content="HTML5 Template" />
-    <meta name="description" content="Porto - Responsive HTML5 Template">
-    <meta name="author" content="okler.net">
-    <!-- Web Fonts  -->
-    @*<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light"
-        rel="stylesheet" type="text/css">*@
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:image" content="http://www.baumax.ba/Content/images/construction/logo.png">
+    <meta property="og:image:type" content="image/png">
+    @RenderSection("meta", required: false)
+    <meta name="author" content="struix.co">
+    @Html.Partial("_PreloadResouresPartial")
 
-    <!-- Vendor CSS -->
-    <link rel="stylesheet" href="~/Content/bootstrap.min.css">
-    <link rel="stylesheet" href="~/Content/fontawesome-all.css" />
-    <link rel="stylesheet" href="~/Content/animate.min.css">
-    <link rel="stylesheet" href="~/Content/simple-line-icons.min.css">
-    <link rel="stylesheet" href="~/Content/owl.carousel.min.css">
-    <link rel="stylesheet" href="~/Content/owl.theme.default.min.css">
-    <link rel="stylesheet" href="~/Content/magnific-popup.min.css">
-
-    <!-- Theme CSS -->
-    <link rel="stylesheet" href="~/Content/theme.css">
-    <link rel="stylesheet" href="~/Content/theme-elements.css">
-    <link rel="stylesheet" href="~/Content/theme-blog.css">
-    <link rel="stylesheet" href="~/Content/theme-shop.css">
-
-    <!-- Current Page CSS -->
-    <link rel="stylesheet" href="~/Content/settings.css">
-    <link rel="stylesheet" href="~/Content/layers.css">
-    <link rel="stylesheet" href="~/Content/navigation.css">
-    <link rel="stylesheet" href="~/Content/nivo-slider.css">
-    <link rel="stylesheet" href="~/Content/default.css">
-
-    <!-- Demo CSS -->
-    <link rel="stylesheet" href="~/Content/demo-construction.css">
-
-    <!-- Skin CSS -->
-    <link rel="stylesheet" href="~/Content/skin-construction.css">
-
-    <!-- Theme Custom CSS -->
-    <link rel="stylesheet" href="~/Content/style.css">
-
-    <!-- Head Libs -->
-    <script src="~/Scripts/modernizr-2.8.3.js"></script>
-
+    <link href="~/Content/bundle.min.css" rel="stylesheet" />
+    <script src="~/Scripts/modernizr-2.8.3.min.js"></script>
+    @RenderSection("styles", required: false)
 </head>
 <body data-spy="scroll" data-target="#sidebar" data-offset="120">
     <div class="body">
@@ -56,43 +29,7 @@
         @Html.Partial("_FooterPartial")
     </div>
 
-    <!-- Vendor -->
-    <script src="~/Scripts/jquery-3.4.1.js"></script>
-    <script src="~/Scripts/jquery.appear.min.js"></script>
-    <script src="~/Scripts/jquery.easing.min.js"></script>
-    <script src="~/Scripts/jquery.cookie.min.js"></script>
-    <script src="~/Scripts/umd/popper.min.js"></script>
-    <script src="~/Scripts/bootstrap.min.js"></script>
-    <script src="~/Scripts/common.min.js"></script>
-    <script src="~/Scripts/jquery.validate.min.js"></script>
-    <script src="~/Scripts/jquery.easypiechart.min.js"></script>
-    <script src="~/Scripts/jquery.gmap.min.js"></script>
-    <script src="~/Scripts/jquery.lazyload.min.js"></script>
-    <script src="~/Scripts/jquery.isotope.min.js"></script>
-    <script src="~/Scripts/owl.carousel.min.js"></script>
-    <script src="~/Scripts/jquery.magnific-popup.min.js"></script>
-    <script src="~/Scripts/jquery.vide.min.js"></script>
-    <script src="~/Scripts/vivus.min.js"></script>
-
-    <!-- Theme Base, Components and Settings -->
-    <script src="~/Scripts/theme.js"></script>
-
-    <!-- Current Page Vendor and Views -->
-    <script src="~/Scripts/jquery.themepunch.tools.min.js"></script>
-    <script src="~/Scripts/jquery.themepunch.revolution.min.js"></script>
-
-    <!-- Current Page Vendor and Views -->
-    <script src="~/Scripts/jquery.nivo.slider.min.js"></script>
-    <script src="~/Scripts/view.contact.js"></script>
-
-    <!-- Demo -->
-    <script src="~/Scripts/demo-construction.js"></script>
-
-    <!-- Theme Custom -->
-    <script src="~/Scripts/custom.js"></script>
-
-    <!-- Theme Initialization Files -->
-    <script src="~/Scripts/theme.init.js"></script>
+    <script src="~/Scripts/bundle.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

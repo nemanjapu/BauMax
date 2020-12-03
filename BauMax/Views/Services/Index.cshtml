@@ -1,0 +1,148 @@
+﻿@model BauMax.Core.ViewModels.ContactViewModel
+@{
+    ViewBag.Title = "Usluge";
+}
+@section meta{
+    <meta name="description" content="Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku, ulici Ismeta Ahmetovica BB. Instalacija sistema za klimatizaciju, vodovod i kanalizaciju. Vama na raspolaganju stručan tim, povjerenje i ljubazno osoblje firme BauMax." />
+    <link href="https://www.baumax.ba/usluge" rel="canonical" />
+    <meta property="og:url" content="https://www.baumax.ba/usluge" />
+    <meta property="og:title" content="BauMax Instalacija sistema za klimatizaciju, vodovod i kanalizaciju" />
+    <meta property="og:description" content="Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku, ulici Ismeta Ahmetovica BB. Instalacija sistema za klimatizaciju, vodovod i kanalizaciju. Vama na raspolaganju stručan tim, povjerenje i ljubazno osoblje firme BauMax." />
+    <meta property="og:image:alt" content="BAUMAX" />
+    <meta property="og:type" content="website" />
+}
+
+<div role="main" class="main">
+    <section class="section section-tertiary section-no-border pb-3 mt-0">
+        <div class="container">
+            <div class="row justify-content-end mt-4">
+                <div class="col-lg-10 pt-4 mt-4 text-right">
+                    <h1 class="text-uppercase font-weight-light mt-4 pt-3 text-color-primary">BauMax Usluge</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <div class="row pt-2">
+            <div class="col-lg-3">
+                <aside class="sidebar">
+
+                    <h4 class="pt-4 mb-3 text-color-dark">Kontaktirajte nas</h4>
+                    <p>Ukoliko vam je potrebna neka od naših usluga, popunite formu ispod i uskoro ćete biti kontakitrani.</p>
+
+                    @using (Ajax.BeginForm("SubmitForm", "Contact", null, new AjaxOptions
+                    {
+                        HttpMethod = "POST",
+                        InsertionMode = InsertionMode.Replace,
+                        UpdateTargetId = "MessageCont"
+                    }))
+                    {
+                        <div id="MessageCont">
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "Ime" })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Prezime" })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", @placeholder = "Email Adresa" })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Broj Telefona" })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    @Html.TextAreaFor(m => m.Note, new { @class = "form-control", @placeholder = "Poruka" })
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col">
+                                    @Html.AntiForgeryToken()
+                                    <input type="submit" value="Pošalji" class="btn btn-lg btn-primary mb-4" data-loading-text="Loading...">
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                </aside>
+
+            </div>
+            <div class="col-lg-9">
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="feature-box feature-box-style-2 align-items-start mb-4 ml-lg-5 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
+                            <div class="ml-2">
+                                <h4 class="mb-2">Usluge</h4>
+                                <p>Instalacija sistema za klimatizaciju, vodovod i kanalizaciju. Vama na raspolaganju stručan tim, povjerenje i ljubazno osoblje firme BauMax.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="feature-box feature-box-style-2 align-items-start mb-4 ml-lg-5 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
+                            <div class="feature-box-icon w-auto h-auto top-0">
+                                <img src="~/Content/images/construction/icons/service1.jpg" alt="Usluga Klimatizacija" class="img-fluid" />
+                            </div>
+                            <div class="feature-box-info ml-2">
+                                <h4 class="mb-2">Klimatizacija</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="feature-box feature-box-style-2 align-items-start mb-4 ml-lg-5 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
+                            <div class="feature-box-icon w-auto h-auto top-0">
+                                <img src="~/Content/images/construction/icons/service2.jpg" alt="Usluga Vodovod" class="img-fluid" />
+                            </div>
+                            <div class="feature-box-info ml-2">
+                                <h4 class="mb-2">Vodovod</h4>
+                                <p>Lorem ipsum dolor sit amet Quisque rutrum pellentesque imperdietonsectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="feature-box feature-box-style-2 align-items-start mb-4 ml-lg-5 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
+                            <div class="feature-box-icon w-auto h-auto top-0">
+                                <img src="~/Content/images/construction/icons/service3.jpg" alt="Usluga Kanalizacija" class="img-fluid" />
+                            </div>
+                            <div class="feature-box-info ml-2">
+                                <h4 class="mb-2">Kanalizacija</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur. Quisque rutrum pellentesque imperdiet. adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-4">
+                    <div class="col">
+                        <div class="feature-box feature-box-style-2 align-items-start mb-4 ml-lg-5 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
+                            <div class="feature-box-icon w-auto h-auto top-0">
+                                <img src="~/Content/images/construction/icons/service4.jpg" alt="Usluga Grijanje" class="img-fluid" />
+                            </div>
+                            <div class="feature-box-info ml-2">
+                                <h4 class="mb-2">Grijanje</h4>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

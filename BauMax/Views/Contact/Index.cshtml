@@ -1,17 +1,185 @@
-﻿
+﻿@model BauMax.Core.ViewModels.ContactViewModel
 @{
-    Layout = null;
+    ViewBag.Title = "Kontakt";
+}
+@section styles{
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCZ9ITEowmHPfUzKt0uM8eMCJi4sqKVozs&libraries=places"></script>
 }
 
-<!DOCTYPE html>
+@section meta{
+    <meta name="description" content="Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku, ulici Ismeta Ahmetovica BB. Osnovna djelatnost firme predstavlja uvođenje instalacija, vodovoda, kanalizacija i plina za grijanje i klimatizaciju." />
+    <link href="https://www.baumax.ba/kontakt" rel="canonical" />
+    <meta property="og:url" content="https://www.baumax.ba/kontakt" />
+    <meta property="og:title" content="BauMax Instalacija sistema za klimatizaciju, vodovod i kanalizaciju" />
+    <meta property="og:description" content="Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku, ulici Ismeta Ahmetovica BB. Osnovna djelatnost firme predstavlja uvođenje instalacija, vodovoda, kanalizacija i plina za grijanje i klimatizaciju." />
+    <meta property="og:image:alt" content="BAUMAX" />
+    <meta property="og:type" content="website" />
+}
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
-    <div> 
+<div role="main" class="main">
+    <section class="section section-tertiary section-no-border pb-3 mt-0">
+        <div class="container">
+            <div class="row justify-content-end mt-4">
+                <div class="col-lg-10 pt-4 mt-4 text-right">
+                    <h1 class="text-uppercase font-weight-light mt-4 pt-3 text-color-primary">Kontaktirajte BauMax</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <div class="row pt-4 mb-4">
+            <div class="col-lg-7">
+
+                <h2 class="mb-0">Pošaljite nam poruku</h2>
+
+                <p class="lead mb-4 mt-1">Ispunite ovu kontakt formu s vašim informacijama i pitanjem i javiti ćemo vam se u najkraćem roku.</p>
+                @using (Ajax.BeginForm("SubmitForm", "Contact", null, new AjaxOptions
+                {
+                    HttpMethod = "POST",
+                    InsertionMode = InsertionMode.Replace,
+                    UpdateTargetId = "MessageCont"
+                }))
+                {
+                    <div id="MessageCont">
+                        <div class="form-row">
+                            <div class="form-group col">
+                                @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "Ime" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                @Html.TextBoxFor(m => m.LastName, new { @class = "form-control", @placeholder = "Prezime" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                @Html.TextBoxFor(m => m.EmailAddress, new { @class = "form-control", @placeholder = "Email Adresa" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                @Html.TextBoxFor(m => m.PhoneNumber, new { @class = "form-control", @placeholder = "Broj Telefona" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                @Html.TextAreaFor(m => m.Note, new { @class = "form-control", @placeholder = "Poruka" })
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col">
+                                @Html.AntiForgeryToken()
+                                <input type="submit" value="Pošalji" class="btn btn-lg btn-primary mb-4" data-loading-text="Loading...">
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+            <div class="col-lg-4 col-lg-offset-1">
+
+                <h4 class="text-color-dark mb-1 pb-3">Lokacija</h4>
+
+                <!-- Google Maps - Go to the bottom of the page to change settings and map location. -->
+                <div id="googlemaps" class="google-map small"></div>
+
+                <ul class="list list-icons mt-4 mb-4">
+                    <li><i class="icon-pin icons"></i> <strong>Adresa:</strong> Kiseljaci bb, Srebrenik 75350</li>
+                    <li><i class="icon-call-end icons"></i> <strong>Telefon:</strong> 060 33 59 356</li>
+                    @*<li><i class="icon-envelope icons"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>*@
+                </ul>
+
+            </div>
+        </div>
+
     </div>
-</body>
-</html>
+</div>
+
+@section scripts{
+    <script>
+
+        /*
+        Map Settings
+
+            Find the Latitude and Longitude of your address:
+                - https://www.latlong.net/
+                - http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
+
+        */
+
+        // Map Markers
+        var mapMarkers = [{
+            address: "Kiseljaci bb, Srebrenik 75350",
+            html: "<strong>BauMax DOO</strong><br>Kiseljaci bb, Srebrenik 75350",
+            icon: {
+                image: "/content/images/pin.png",
+                iconsize: [26, 46],
+                iconanchor: [12, 46]
+            },
+            popup: true
+        }];
+
+        // Map Initial Location
+        var initLatitude = 44.697917;
+        var initLongitude = 18.495283;
+
+        // Map Extended Settings
+        var mapSettings = {
+            controls: {
+                draggable: (($.browser.mobile) ? false : true),
+                panControl: true,
+                zoomControl: true,
+                mapTypeControl: true,
+                scaleControl: true,
+                streetViewControl: true,
+                overviewMapControl: true
+            },
+            scrollwheel: false,
+            markers: mapMarkers,
+            latitude: initLatitude,
+            longitude: initLongitude,
+            zoom: 16
+        };
+
+        var map = $('#googlemaps').gMap(mapSettings),
+            mapRef = $('#googlemaps').data('gMap.reference');
+
+        // Map text-center At
+        var mapCenterAt = function (options, e) {
+            e.preventDefault();
+            $('#googlemaps').gMap("centerAt", options);
+        }
+
+        // Create an array of styles.
+        var mapColor = "#cfa968";
+
+        var styles = [{
+            stylers: [{
+                hue: mapColor
+            }]
+        }, {
+            featureType: "road",
+            elementType: "geometry",
+            stylers: [{
+                lightness: 0
+            }, {
+                visibility: "simplified"
+            }]
+        }, {
+            featureType: "road",
+            elementType: "labels",
+            stylers: [{
+                visibility: "off"
+            }]
+        }];
+
+        var styledMap = new google.maps.StyledMapType(styles, {
+            name: 'Styled Map'
+        });
+
+        mapRef.mapTypes.set('map_style', styledMap);
+        mapRef.setMapTypeId('map_style');
+
+    </script>
+}

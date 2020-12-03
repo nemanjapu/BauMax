@@ -1,9 +1,23 @@
-﻿<div role="main" class="main">
+﻿@{
+    ViewBag.Title = "O nama";
+}
+
+@section meta{
+    <meta name="description" content="Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku, ulici Ismeta Ahmetovica BB. Osnovna djelatnost firme predstavlja uvođenje instalacija, vodovoda, kanalizacija i plina za grijanje i klimatizaciju." />
+    <link href="https://www.baumax.ba/o-nama" rel="canonical" />
+    <meta property="og:url" content="https://www.baumax.ba/o-nama" />
+    <meta property="og:title" content="BauMax Instalacija sistema za klimatizaciju, vodovod i kanalizaciju" />
+    <meta property="og:description" content="Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku, ulici Ismeta Ahmetovica BB. Osnovna djelatnost firme predstavlja uvođenje instalacija, vodovoda, kanalizacija i plina za grijanje i klimatizaciju." />
+    <meta property="og:image:alt" content="BAUMAX" />
+    <meta property="og:type" content="website" />
+}
+
+<div role="main" class="main">
     <section class="section section-tertiary section-no-border pb-3 mt-0">
         <div class="container">
             <div class="row justify-content-end mt-4">
                 <div class="col-lg-10 pt-4 mt-4 text-right">
-                    <h1 class="text-uppercase font-weight-light mt-4 pt-3 text-color-primary">Company</h1>
+                    <h1 class="text-uppercase font-weight-light mt-4 pt-3 text-color-primary">BauMax - O nama</h1>
                 </div>
             </div>
         </div>
@@ -16,11 +30,11 @@
                 <aside class="sidebar" id="sidebar" data-plugin-sticky data-plugin-options="{'minWidth': 991, 'containerSelector': '.container', 'padding': {'top': 110}}">
 
                     <ul class="nav nav-list flex-column mb-4 show-bg-active">
-                        <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#who-we-are">Who We Are</a></li>
-                        <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#history">History</a></li>
-                        <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#mission-vision">Mission &amp; Vision</a></li>
-                        <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#leadership">Leadership</a></li>
-                        <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#partners">Partners</a></li>
+                        <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#who-we-are">Ko smo mi</a></li>
+                        @*<li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#history">History</a></li>
+                            <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#mission-vision">Mission &amp; Vision</a></li>
+                            <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#leadership">Leadership</a></li>
+                            <li class="nav-item"><a class="nav-link" data-hash data-hash-offset="110" href="#partners">Partners</a></li>*@
                     </ul>
 
                 </aside>
@@ -40,158 +54,171 @@
                         </div>
                     </div>
 
-                    <h2 class="mb-0 text-color-dark">Who We Are</h2>
-                    <p class="lead mb-4 mt-4">Founded in 2001 by John Doe, gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
+                    <h2 class="mb-0 text-color-dark">Ko smo mi</h2>
+                    <p class="lead mb-4 mt-4">
+                        Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku, ulici Ismeta Ahmetovica BB.
+                    </p>
 
-                    <p>Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat.</p>
+                    <p>
+                        Osnovna djelatnost firme predstavlja uvođenje instalacija, vodovoda, kanalizacija i plina za grijanje i klimatizaciju.
+                    </p>
+                    <p>
+                        Kao dokaz našeg uspješnog dugogodisnjeg rada na području Bosne i Hercegovine, ove godine smo u saradnji sa renomiranim kompanijama TEHNOGRAD i GROMEX izvođači radova na projektu Ministarstva za raseljena lica. Naime, izgradnja multimilionskog projekta u Miladijama (općina Tuzla) i Špionica (općina Srebrenik), pokazatelj su da smo prvenstveno fokusirani na kvalitet i zadovoljstvo naših klijenata, što ukazuje na dugogodišnje prisutstvo na našem tržištu.
+                    </p>
+                    <p>
+                        Zapošljavanje stručnog, kvalitetnog i edukovanog mladog kadra je jedan od naših primarnih ciljeva. Shodno tome, potpisnici smo i projekta sa Gradom Srebrenik o sufinansiranju pri zapošljavanju mladih i perspektivnih ljudi.
+                    </p>
+                    <p>
+                        Odgovornost, timski rad, pozitivna radna atmosfera, kao i evropski standardi upravljanja i funkcionisanja su jedan od osnovnih postulata naše kompanije, jer smo uvijek okrenuti ka napretku kao i novim i inovativnim izazovima.
+                    </p>
                 </section>
 
-                <hr class="solid my-5">
+                @*<hr class="solid my-5">
 
-                <section id="history" class="mb-4">
-                    <h2 class="mb-0 text-color-dark">History</h2>
+                    <section id="history" class="mb-4">
+                        <h2 class="mb-0 text-color-dark">History</h2>
 
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <img class="float-left img-fluid mr-4 mb-3 mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0" width="200" src="img/demos/construction/office/office-1.jpg" alt="">
-                            <p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
-                            <p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
+                        <div class="row">
+                            <div class="col-lg-7">
+                                <img class="float-left img-fluid mr-4 mb-3 mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0" width="200" src="img/demos/construction/office/office-1.jpg" alt="">
+                                <p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
+                                <p class="mt-4">Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. </p>
+                            </div>
+                            <div class="col-lg-4">
+                                <ul class="list list-unstyled list-primary list-borders">
+                                    <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0"><strong class="text-color-primary text-4">2017 - </strong> Moves its headquarters to a new building</li>
+                                    <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="100"><strong class="text-color-primary text-4">2014 - </strong> Porto creates its new brand</li>
+                                    <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="200"><strong class="text-color-primary text-4">2006 - </strong> Porto opens it doors in London</li>
+                                    <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300"><strong class="text-color-primary text-4">2003 - </strong> Inauguration of the new office</li>
+                                    <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="400"><strong class="text-color-primary text-4">2001 - </strong> Porto goes into business</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="col-lg-4">
-                            <ul class="list list-unstyled list-primary list-borders">
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0"><strong class="text-color-primary text-4">2017 - </strong> Moves its headquarters to a new building</li>
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="100"><strong class="text-color-primary text-4">2014 - </strong> Porto creates its new brand</li>
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="200"><strong class="text-color-primary text-4">2006 - </strong> Porto opens it doors in London</li>
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300"><strong class="text-color-primary text-4">2003 - </strong> Inauguration of the new office</li>
-                                <li class="pt-2 pb-2 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="400"><strong class="text-color-primary text-4">2001 - </strong> Porto goes into business</li>
-                            </ul>
+                    </section>
+
+                    <hr class="solid my-5">
+
+                    <section id="mission-vision" class="mb-4">
+
+                        <div class="row mt-4">
+                            <div class="col-sm-6 text-center">
+                                <div class="feature-box feature-box-style-4 justify-content-center mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
+                                    <span class="featured-boxes featured-boxes-style-4 p-0 m-0">
+                                        <span class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
+                                            <span class="box-content p-0 m-0">
+                                                <i class="icon-featured icon-target icons"></i>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <div class="feature-box-info">
+                                        <h2 class="mb-3 text-color-dark">Mission</h2>
+                                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 text-center">
+                                <div class="feature-box feature-box-style-4 justify-content-center mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
+                                    <span class="featured-boxes featured-boxes-style-4 p-0 m-0">
+                                        <span class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
+                                            <span class="box-content p-0 m-0">
+                                                <i class="icon-featured icon-eye icons"></i>
+                                            </span>
+                                        </span>
+                                    </span>
+                                    <div class="feature-box-info">
+                                        <h2 class="mb-3 text-color-dark">Vision</h2>
+                                        <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla nisi elit consequat.</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </section>
 
-                <hr class="solid my-5">
+                    </section>
 
-                <section id="mission-vision" class="mb-4">
+                    <hr class="solid my-5">
 
-                    <div class="row mt-4">
-                        <div class="col-sm-6 text-center">
-                            <div class="feature-box feature-box-style-4 justify-content-center mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="0">
-                                <span class="featured-boxes featured-boxes-style-4 p-0 m-0">
-                                    <span class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
-                                        <span class="box-content p-0 m-0">
-                                            <i class="icon-featured icon-target icons"></i>
+                    <section id="leadership" class="mb-4">
+                        <h2 class="mb-0 text-color-dark">Leadership</h2>
+
+                        <div class="row mt-4">
+
+                            <div class="col-md-6">
+                                <span class="thumb-info thumb-info-side-image thumb-info-no-zoom no-borders mb-4">
+                                    <span class="thumb-info-side-image-wrapper p-0">
+                                        <img src="img/team/team-22.jpg" class="img-fluid" alt="" style="width: 160px;">
+                                    </span>
+                                    <span class="thumb-info-caption">
+                                        <span class="thumb-info-caption-text">
+                                            <h5 class="text-uppercase mb-1">John Doe - <small class="font-weight-light">Founder</small></h5>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
                                         </span>
                                     </span>
                                 </span>
-                                <div class="feature-box-info">
-                                    <h2 class="mb-3 text-color-dark">Mission</h2>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing metus elit. Quisque rutrum pellentesque imperdiet.</p>
-                                </div>
+
                             </div>
-                        </div>
-                        <div class="col-sm-6 text-center">
-                            <div class="feature-box feature-box-style-4 justify-content-center mt-4 appear-animation" data-appear-animation="fadeInUp" data-appear-animation-delay="300">
-                                <span class="featured-boxes featured-boxes-style-4 p-0 m-0">
-                                    <span class="featured-box featured-box-primary featured-box-effect-6 p-0 m-0">
-                                        <span class="box-content p-0 m-0">
-                                            <i class="icon-featured icon-eye icons"></i>
+                            <div class="col-md-6">
+                                <span class="thumb-info thumb-info-side-image thumb-info-no-zoom no-borders mb-4">
+                                    <span class="thumb-info-side-image-wrapper p-0">
+                                        <img src="img/team/team-23.jpg" class="img-fluid" alt="" style="width: 160px;">
+                                    </span>
+                                    <span class="thumb-info-caption">
+                                        <span class="thumb-info-caption-text">
+                                            <h5 class="text-uppercase mb-1">Jeremy Doe - <small class="font-weight-light">President</small></h5>
+                                            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
                                         </span>
                                     </span>
                                 </span>
-                                <div class="feature-box-info">
-                                    <h2 class="mb-3 text-color-dark">Vision</h2>
-                                    <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla nisi elit consequat.</p>
-                                </div>
+
                             </div>
-                        </div>
-                    </div>
-
-                </section>
-
-                <hr class="solid my-5">
-
-                <section id="leadership" class="mb-4">
-                    <h2 class="mb-0 text-color-dark">Leadership</h2>
-
-                    <div class="row mt-4">
-
-                        <div class="col-md-6">
-                            <span class="thumb-info thumb-info-side-image thumb-info-no-zoom no-borders mb-4">
-                                <span class="thumb-info-side-image-wrapper p-0">
-                                    <img src="img/team/team-22.jpg" class="img-fluid" alt="" style="width: 160px;">
-                                </span>
-                                <span class="thumb-info-caption">
-                                    <span class="thumb-info-caption-text">
-                                        <h5 class="text-uppercase mb-1">John Doe - <small class="font-weight-light">Founder</small></h5>
-                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                                    </span>
-                                </span>
-                            </span>
-
-                        </div>
-                        <div class="col-md-6">
-                            <span class="thumb-info thumb-info-side-image thumb-info-no-zoom no-borders mb-4">
-                                <span class="thumb-info-side-image-wrapper p-0">
-                                    <img src="img/team/team-23.jpg" class="img-fluid" alt="" style="width: 160px;">
-                                </span>
-                                <span class="thumb-info-caption">
-                                    <span class="thumb-info-caption-text">
-                                        <h5 class="text-uppercase mb-1">Jeremy Doe - <small class="font-weight-light">President</small></h5>
-                                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum pellentesque imperdiet. Nulla lacinia iaculis nulla.</p>
-                                    </span>
-                                </span>
-                            </span>
 
                         </div>
 
-                    </div>
+                    </section>*@
 
-                </section>
+                @*<hr class="solid my-5">*@
 
-                <hr class="solid my-5">
+                @*<section id="partners" class="mb-4">
+                        <h2 class="mb-0 text-color-dark">Partners</h2>
 
-                <section id="partners" class="mb-4">
-                    <h2 class="mb-0 text-color-dark">Partners</h2>
-
-                    <div class="row mt-4">
-                        <div class="content-grid content-grid-dashed col mt-4 mb-4">
-                            <div class="row content-grid-row">
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <div class="p-4">
-                                        <img class="img-fluid" src="img/logos/logo-1.png" alt="">
+                        <div class="row mt-4">
+                            <div class="content-grid content-grid-dashed col mt-4 mb-4">
+                                <div class="row content-grid-row">
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="img/logos/logo-1.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                                        </div>
+                                    </div>
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="img/logos/logo-3.png" alt="">
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <div class="p-4">
-                                        <img class="img-fluid" src="img/logos/logo-2.png" alt="">
+                                <div class="row content-grid-row">
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="img/logos/logo-4.png" alt="">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <div class="p-4">
-                                        <img class="img-fluid" src="img/logos/logo-3.png" alt="">
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="img/logos/logo-4.png" alt="">
+                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="row content-grid-row">
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <div class="p-4">
-                                        <img class="img-fluid" src="img/logos/logo-4.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <div class="p-4">
-                                        <img class="img-fluid" src="img/logos/logo-4.png" alt="">
-                                    </div>
-                                </div>
-                                <div class="content-grid-item col-sm-4 text-center">
-                                    <div class="p-4">
-                                        <img class="img-fluid" src="img/logos/logo-6.png" alt="">
+                                    <div class="content-grid-item col-sm-4 text-center">
+                                        <div class="p-4">
+                                            <img class="img-fluid" src="img/logos/logo-6.png" alt="">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>*@
 
             </div>
 
