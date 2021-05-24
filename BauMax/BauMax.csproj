@@ -300,6 +300,17 @@
     <Content Include="Content\fonts\josefin-sans-v16-latin-ext-700.svg" />
     <Content Include="Content\fonts\josefin-sans-v16-latin-ext-regular.svg" />
     <Content Include="Content\fonts\playfair-display-v21-latin-ext-regular.svg" />
+    <Content Include="Content\images\about-sl1.jpg" />
+    <Content Include="Content\images\about-sl2.jpg" />
+    <Content Include="Content\images\about-sl3.jpg" />
+    <Content Include="Content\images\about-sl4.jpg" />
+    <Content Include="Content\images\construction\gallery\work1.jpg" />
+    <Content Include="Content\images\construction\gallery\work2.jpg" />
+    <Content Include="Content\images\construction\gallery\work3.jpg" />
+    <Content Include="Content\images\construction\gallery\work4.jpg" />
+    <Content Include="Content\images\construction\gallery\work5.jpg" />
+    <Content Include="Content\images\construction\gallery\work7.jpg" />
+    <Content Include="Content\images\construction\gallery\work8.jpg" />
     <Content Include="Content\nivo-default.css" />
     <Content Include="Content\demo-construction.css" />
     <Content Include="Content\fontawesome-all.css" />
@@ -384,6 +395,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\style.css" />
     <Content Include="mstile-150x150.png" />
+    <Content Include="robots.txt" />
     <Content Include="safari-pinned-tab.svg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />

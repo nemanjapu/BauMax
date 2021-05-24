@@ -7,7 +7,7 @@
 }
 
 @section meta{
-    <meta name="description" content="Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku, ulici Ismeta Ahmetovica BB. Osnovna djelatnost firme predstavlja uvođenje instalacija, vodovoda, kanalizacija i plina za grijanje i klimatizaciju." />
+    <meta name="description" content="Kompanija BAUMAX, osnovana je 2014. godine sa sjedištem u Srebreniku. Osnovna djelatnost firme predstavlja uvođenje instalacija, vodovoda, kanalizacija i plina za grijanje i klimatizaciju." />
     <link href="https://www.baumax.ba/kontakt" rel="canonical" />
     <meta property="og:url" content="https://www.baumax.ba/kontakt" />
     <meta property="og:title" content="BauMax Instalacija sistema za klimatizaciju, vodovod i kanalizaciju" />
@@ -34,7 +34,7 @@
 
                 <h2 class="mb-0">Pošaljite nam poruku</h2>
 
-                <p class="lead mb-4 mt-1">Ispunite ovu kontakt formu s vašim informacijama i pitanjem i javiti ćemo vam se u najkraćem roku.</p>
+                <p class="lead mb-4 mt-1">Ukoliko Vam je potreban kvalitetan izvođač nekih od radova iz naše ponude, budite slobodni da nas kontaktirate. Rado ćemo vam odgovoriti na sve vaše upite.</p>
                 @using (Ajax.BeginForm("SubmitForm", "Contact", null, new AjaxOptions
                 {
                     HttpMethod = "POST",
@@ -86,7 +86,15 @@
 
                 <ul class="list list-icons mt-4 mb-4">
                     <li><i class="icon-pin icons"></i> <strong>Adresa:</strong> Kiseljaci bb, Srebrenik 75350</li>
-                    <li><i class="icon-call-end icons"></i> <strong>Telefon:</strong> 060 33 59 356</li>
+                    <li><i class="icon-call-end icons"></i> <strong class="d-block">Telefon:</strong> +387 60 33 59 356 <br />+387 63 283 721</li>
+                    <li>
+                        <i class="icon-envelope icons"></i>
+                        <strong class="d-block">Email:</strong>
+                        info@baumax.ba <br />
+                        tehnickapriprema@baumax.ba <br />
+                        direktor@baumax.ba <br />
+                        posao@baumax.ba
+                    </li>
                     @*<li><i class="icon-envelope icons"></i> <strong>Email:</strong> <a href="mailto:mail@example.com">mail@example.com</a></li>*@
                 </ul>
 
@@ -99,19 +107,10 @@
 @section scripts{
     <script>
 
-        /*
-        Map Settings
-
-            Find the Latitude and Longitude of your address:
-                - https://www.latlong.net/
-                - http://www.findlatitudeandlongitude.com/find-address-from-latitude-and-longitude/
-
-        */
-
         // Map Markers
         var mapMarkers = [{
             address: "Kiseljaci bb, Srebrenik 75350",
-            html: "<strong>BauMax DOO</strong><br>Kiseljaci bb, Srebrenik 75350",
+            html: "<strong>BauMax DOO</strong><br>Ul. 21 Srebreničke brigade bb",
             icon: {
                 image: "/content/images/pin.png",
                 iconsize: [26, 46],
@@ -121,8 +120,8 @@
         }];
 
         // Map Initial Location
-        var initLatitude = 44.697917;
-        var initLongitude = 18.495283;
+        var initLatitude = 44.7054273;
+        var initLongitude = 18.49146;
 
         // Map Extended Settings
         var mapSettings = {

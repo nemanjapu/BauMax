@@ -24,5 +24,29 @@ namespace BauMax
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             BundleTable.EnableOptimizations = true;
         }
+
+        protected void Application_BeginRequest()
+        {
+            if (!Request.Url.Host.StartsWith("www") && !Request.Url.IsLoopback)
+            {
+                UriBuilder builder = new UriBuilder(Request.Url);
+                builder.Host = "www." + Request.Url.Host;
+                Response.StatusCode = 301;
+                Response.AddHeader("Location", builder.ToString());
+                Response.End();
+            }
+            var loadbalancerReceivedSslRequest = string.Equals(Request.Headers["X-Forwarded-Proto"], "https");
+            var serverReceivedSslRequest = Request.IsSecureConnection;
+
+            if (loadbalancerReceivedSslRequest || serverReceivedSslRequest) return;
+
+            UriBuilder uri = new UriBuilder(Context.Request.Url);
+            if (!uri.Host.Equals("localhost"))
+            {
+                uri.Port = 443;
+                uri.Scheme = "https";
+                Response.Redirect(uri.ToString());
+            }
+        }
     }
 }

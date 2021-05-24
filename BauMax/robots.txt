@@ -1,0 +1,2 @@
+User-agent: *
+Sitemap: https://www.baumax.ba/sitemap.xml
